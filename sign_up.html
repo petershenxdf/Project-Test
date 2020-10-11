@@ -1,0 +1,32 @@
+<!DOCTYPE html> 
+<html> 
+  <head>
+      <link rel="stylesheet" href="css/login.css">
+    <title>
+        COVID-19 DATA
+    </title> 
+  </head> 
+  
+  <body id="body">
+    <h1>
+      Sign Up
+    </h1>
+    <div>
+        <br>
+        <form>
+            <p><label for="username">User name</label>
+	            <input type="text" id="username" placeholder="username" required></p>
+            <p><label for="password">Password</label>
+	            <input type="text" id="password" placeholder="password" required></p>
+            <p><label for="email">Email</label>
+	            <input type="text" id="email" placeholder="email" pattern="/^[a-zA-Z0-9.!#$%&amp;'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" required/></p>
+            <p><label for="phone">Phone number</label>
+	            <input type="text" id="phone" placeholder="phone" required></p>
+        </form>
+	        <button onclick="sendForm()">Submit</button>
+    </div>
+
+  <script src="js/sign_up.js"></script>
+  
+  </body> 
+</html> 
