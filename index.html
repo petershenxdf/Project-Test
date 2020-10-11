@@ -4,73 +4,121 @@
 <head>
     <meta charset="utf-8">
     <meta name="description" content="Group 5 Web App Project">
-    
+
     <title> ⚡ Group 5 Project 10/9/2020</title>
-    
 
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <script src="https://kit.fontawesome.com/2254a52875.js" crossorigin="anonymous"></script>
 </head>
 
 
 
 <body>
-    <h1>Covid-19 Information Board</h1>
-    <h1> Hi this is test Yuchen Xiao </h1>>
-    
-    <h1 id="plots"> Main Plots</h1>
-    <p><em><a href="BarChart.html">Comparison of Selected States</a></em> </p>
-    <p><em><a href="LineChart.html">Trends of Selected States</a></em> </p>
-    <p><em><a href="Heatmap.html">Heatmap of Entrire US</a></em> </p>
-    <p><em><a href="https://www.amboss.com/us/knowledge/COVID-19_%28coronavirus_disease_2019%29">Covid knowledge</a></em> </p>
-    <hr>
-
-   
-    <hr>
-    <h2>Tables of Each State</h2>
-    <!-- Like the whole html file, "table" itself can have head and foot.-->
-    <table border="1">
-        <!-- to add outlines, we use border attribute. To add spacing, use "cellspacing"-->
-        <thead>
-            <tr>
-                <th>States</th>
-                <th>Total positieve cases</th>
-                <th>Total death cases</th>
-                <th>Total recoved cases</th>
-            </tr>
-        </thead>
-        
-        <tbody>
-            <tr>
-                <td>Illinois SBSBSBSBSBSBSBSB </td>
-                <td>10086</td>
-                <td>1900</td>
-                <td>1500</td>
-            </tr>
-
-            <tr>
-                <td>California </td>
-                <td>12000</td>
-                <td>1000</td>
-                <td>3600</td>
-            </tr>
-            <tr>
-                <td>Texas </td>
-                <td>11000</td>
-                <td>1000</td>
-                <td>1800</td>
-            </tr>
-        </tbody>
-    </table>
     <br>
+    <div class="container-fluid">
+        <div style="text-align:center;">
+            <h1 class="h3"><i class="fas fa-hands-wash" style="font-size: 40px; "></i>&nbsp;&nbsp;Covid-19 Information
+                Board&nbsp;&nbsp;<i class="fas fa-user-nurse" style="font-size: 40px;"></i></h1>
 
-  
+            <br>
+            <p id="plots" class="h5"> CSC 436 - Group 5</p>
+            <br>
+            <p><em><a href="BarChart.html">Comparison of Selected States</a></em> </p>
+            <p><em><a href="LineChart.html">Trends of Selected States</a></em> </p>
+            <p><em><a href="Heatmap.html">Heatmap of Entrire US</a></em> </p>
+            <p><em><a href="https://www.amboss.com/us/knowledge/COVID-19_%28coronavirus_disease_2019%29">Covid
+                        knowledge</a></em> </p>
+        </div>
+        <hr>
+        <br>
+
+        <hr>
+
+        <div style="text-align:center;">
+            <p class="h3" style="font-family: Times, serif;">Tables of Each State</p>
+            <br>
+
+            <form style="text-align:center;">
+                <div class = "form-group row">
+                  <div class = "col"> Type
+                 <select class = "form-control" [(ngModel)] = "oriAirport" name = "oriAirport">
+                   <option value = "ORD"> Death </option>
+                   <option value = "CDC"> Positive Case </option>
+                   <option value = "OMG"> Recovery </option>
+                 </select>
+                 </div>
+                 <div class = "col"> Sort
+                 <select class = "form-control" [(ngModel)] = "desAirport" name = "desAirport">
+                  <option value = "ORD"> Highest </option>
+                  <option value = "CDC"> Lowest </option>
+                </select>
+                </div>
+                 <div class = "col">Number of selections
+                 <input class = "form-control" id = "travelers" type = "number" [(ngModel)] = "travelers" name = "travelers">
+                </div>
+                </div>
+            </form>
+            <button type= "button" class="btn btn-success btn-circle btn-xl"> Search </button>
+
+            <!-- <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <button class="dropdown-item" type="button">Action</button>
+                    <button class="dropdown-item" type="button">Another action</button>
+                    <button class="dropdown-item" type="button">Something else here</button>
+                </div>
+            </div> -->
+
+            <br>
+            <br>
+            <br>
+            <table border="1" style=" margin-left: auto; margin-right: auto;">
+                <thead>
+                    <tr>
+                        <th>States</th>
+                        <th>Total positieve cases</th>
+                        <th>Total death cases</th>
+                        <th>Total recoved cases</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Illinois </td>
+                        <td>10086</td>
+                        <td>1900</td>
+                        <td>1500</td>
+                    </tr>
+
+                    <tr>
+                        <td>California </td>
+                        <td>12000</td>
+                        <td>1000</td>
+                        <td>3600</td>
+                    </tr>
+                    <tr>
+                        <td>Texas </td>
+                        <td>11000</td>
+                        <td>1000</td>
+                        <td>1800</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
 
 
 
 
 
+
+    </div>
 </body>
 
-</html>>
+</html>
 </body>
