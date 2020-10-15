@@ -1,0 +1,98 @@
+<app-chart></app-chart>
+
+<br>
+    <div class="container-fluid">
+        <div style="text-align:center;">
+            <h1 class="h3"><i class="fas fa-hands-wash" style="font-size: 40px; "></i>&nbsp;&nbsp;Covid-19 Information
+                Board&nbsp;&nbsp;<i class="fas fa-user-nurse" style="font-size: 40px;"></i></h1>
+
+            <br>
+            <p id="plots" class="h5"> CSC 436 - Group 5</p>
+            <br>
+            <p><em><a href="Login.html">Login in</a></em> </p>
+            <p><em><a href="BarChart.html">Comparison of Selected States</a></em> </p>
+            <p><em><a href="LineChart.html">Trends of Selected States</a></em> </p>
+            <!-- <p><em><a href="Heatmap.html">Heatmap of Entrire US</a></em> </p> -->
+            <p><em><a href="https://www.amboss.com/us/knowledge/COVID-19_%28coronavirus_disease_2019%29">Covid
+                        knowledge</a></em> </p>
+        </div>
+        <hr>
+        <hr>
+
+        <div style="text-align:center;">
+            <p class="h3" style="font-family: Times, serif;">Tables of Each State</p>
+            <br>
+
+            <form>
+                <div class="form-group row mx-auto"  style= "width: 70%;">
+                    <div class="col"> Data Type
+                        <select class="form-control" [(ngModel)]="dataType" name="dataType">
+                            <option value="ORD"> Death </option>
+                            <option value="CDC"> Positive Case </option>
+                            <option value="OMG"> Recovery </option>
+                        </select>
+                    </div>
+                    <div class="col"> Sort Method
+                        <select class="form-control" [(ngModel)]="sortMethod" name="sortMethod">
+                            <option value="ORD"> Highest </option>
+                            <option value="CDC"> Lowest </option>
+                        </select>
+                    </div>
+                    <div class="col">Number of selections
+                        <input class="form-control" id="numberOfSelect" type="number" [(ngModel)]="numberOfSelect"
+                            name="numberOfSelect">
+                    </div>
+                </div>
+            </form>
+            <br>
+            <button type="button" class="btn btn-info btn-circle btn-xl"> Search </button>
+
+            <br>
+            <hr>
+            <div></div>
+            <hr>
+
+            <br>
+            <br>
+            <table border="1" style=" margin-left: auto; margin-right: auto;">
+                <thead>
+                    <tr>
+                        <th>States</th>
+                        <th>Total positieve cases</th>
+                        <th>Total death cases</th>
+                        <th>Total recoved cases</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Illinois </td>
+                        <td>10086</td>
+                        <td>1900</td>
+                        <td>1500</td>
+                    </tr>
+
+                    <tr>
+                        <td>California </td>
+                        <td>12000</td>
+                        <td>1000</td>
+                        <td>3600</td>
+                    </tr>
+                    <tr>
+                        <td>Texas </td>
+                        <td>11000</td>
+                        <td>1000</td>
+                        <td>1800</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <br>
+            <br>
+            <input id="dateOfData" type="date" [(ngModel)]="dateOfData"
+            name="dateOfData">
+            <button type="button" class="btn btn-info btn-circle btn-xl"> Update </button>
+        </div>
+
+
+    </div>
