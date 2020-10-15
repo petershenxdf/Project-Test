@@ -1,4 +1,3 @@
-<app-chart></app-chart>
 
 <br>
     <div class="container-fluid">
@@ -11,15 +10,16 @@
             <br>
             <p><em><a href="Login.html">Login in</a></em> </p>
             <p><em><a href="BarChart.html">Comparison of Selected States</a></em> </p>
-            <p><em><a href="LineChart.html">Trends of Selected States</a></em> </p>
+            <p [style.display]="'block'"><em><a href="LineChart.html">Trends of Selected States</a></em> </p>
             <!-- <p><em><a href="Heatmap.html">Heatmap of Entrire US</a></em> </p> -->
             <p><em><a href="https://www.amboss.com/us/knowledge/COVID-19_%28coronavirus_disease_2019%29">Covid
                         knowledge</a></em> </p>
         </div>
         <hr>
         <hr>
+        <app-chart></app-chart>
 
-        <div style="text-align:center;">
+        <div style="text-align:center;" [style.display]="'none'">
             <p class="h3" style="font-family: Times, serif;">Tables of Each State</p>
             <br>
 
