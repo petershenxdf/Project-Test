@@ -7,13 +7,15 @@ import { ChartComponent } from './chart/chart.component';
 import { BarComponent } from './bar/bar.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
+import { MapComponent } from './map/map.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChartComponent,
     BarComponent,
-    LoginComponent
+    LoginComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
