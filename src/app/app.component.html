@@ -16,10 +16,10 @@
 
 
     </div>
-    <button (click)="toggle()" id="bt"> Data Table </button>
+    <button (click)="toggle()" id="bt"> {{buttonName}} </button>
     <hr>
     <hr>
-    <!-- <app-chart></app-chart> -->
+    <app-chart></app-chart>
     <ng-container *ngIf="show">
         <div style="text-align:center;" [style.display]="'block'">
             <p class="h3" style="font-family: Times, serif;">Tables of Each State</p>
