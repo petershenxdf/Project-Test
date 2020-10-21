@@ -36,7 +36,7 @@ am4core.useTheme(am4themes_animated);
 
 // Create chart instance
 let chart = am4core.create("bardiv", am4charts.XYChart3D);
-
+this.chart=chart;
 // Add data
 chart.data = [{
   "state": "New York",
