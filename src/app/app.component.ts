@@ -14,12 +14,20 @@ export class AppComponent {
 
   public show: boolean = true;
 
+  public buttonName:any = 'Show Date Table';
+
   ngOnInit () {  }
 
   toggle() {
     this.show = !this.show;
 
     // CHANGE THE NAME OF THE BUTTON.
+    if(this.show){
+      this.buttonName = "Hide Date Table";
+    } else {
+      this.buttonName = "Show Date Table";
+    }
+      
     console.log(this.show);
   }
 
