@@ -275,7 +275,7 @@ heatLegend.maxValue = 40000000;
 // Set up custom heat map legend labels using axis ranges
 let minRange = heatLegend.valueAxis.axisRanges.create();
 minRange.value = heatLegend.minValue;
-minRange.label.text = "Little";
+minRange.label.text = "Few";
 let maxRange = heatLegend.valueAxis.axisRanges.create();
 maxRange.value = heatLegend.maxValue;
 maxRange.label.text = "A lot!";
@@ -293,7 +293,7 @@ polygonTemplate.strokeWidth = 0.5;
 
 // Create hover state and set alternative fill color
 let hs = polygonTemplate.states.create("hover");
-hs.properties.fill = am4core.color("#3c5bdc");
+hs.properties.fill = am4core.color("#FF4C33");
 
     });
   }
