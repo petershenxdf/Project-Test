@@ -8,6 +8,7 @@ import { BarComponent } from './bar/bar.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { MapComponent } from './map/map.component';
+import {MustMatchDirective} from './directives/match-value.directive';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { MapComponent } from './map/map.component';
     ChartComponent,
     BarComponent,
     LoginComponent,
-    MapComponent
+    MapComponent,
+    MustMatchDirective
   ],
   imports: [
     BrowserModule,
