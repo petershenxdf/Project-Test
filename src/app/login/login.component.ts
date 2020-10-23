@@ -3,7 +3,6 @@ import {Component, OnInit} from '@angular/core';
 export class SignUp {
   public userName: string;
   public email: string;
-  public phone: string;
   public password: string;
   public confirmPassword: string;
 }
