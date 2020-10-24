@@ -1,26 +1,35 @@
+import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ChartComponent } from './chart/chart.component';
 import { BarComponent } from './bar/bar.component';
-import { LoginComponent } from './login/login.component';
+// import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
-import { MapComponent } from './map/map.component';
+import { TableComponent } from './table/table.component';
+
+const routes: Routes = [
+  {path: 'LineC', component: ChartComponent},
+  {path: 'BarC', component: BarComponent},
+  {path: 'Table', component: TableComponent},
+  {path: '', redirectTo: 'Table', pathMatch: 'full'}
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     ChartComponent,
     BarComponent,
-    LoginComponent,
-    MapComponent
+    TableComponent
+    // LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
