@@ -1,7 +1,7 @@
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
-
+import { TodoListComponent } from './todo-list/todo-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ChartComponent } from './chart/chart.component';
@@ -22,7 +22,8 @@ const routes: Routes = [
     AppComponent,
     ChartComponent,
     BarComponent,
-    TableComponent
+    TableComponent,
+    TodoListComponent
     // LoginComponent
   ],
   imports: [
