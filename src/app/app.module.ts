@@ -8,18 +8,21 @@ import { ChartComponent } from './chart/chart.component';
 import { BarComponent } from './bar/bar.component';
 // import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
+import { TableComponent } from './table/table.component';
 
 const routes: Routes = [
   {path: 'LineC', component: ChartComponent},
   {path: 'BarC', component: BarComponent},
-  {path: '', redirectTo: 'LineC', pathMatch: 'full'}
+  {path: 'Table', component: TableComponent},
+  {path: '', redirectTo: 'Table', pathMatch: 'full'}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     ChartComponent,
-    BarComponent
+    BarComponent,
+    TableComponent
     // LoginComponent
   ],
   imports: [
