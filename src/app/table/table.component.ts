@@ -20,6 +20,8 @@ export class TableComponent implements OnInit {
   }
 
   SearchClick(): void {
+    if(this.numberOfSelect > 5) this.numberOfSelect = 5;
+    if(this.numberOfSelect <= 0) this.numberOfSelect = 1;
     console.log(this.dataType + ' ' + this.sortMethod + ' ' + Number(this.numberOfSelect));
   }
 
