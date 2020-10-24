@@ -10,8 +10,8 @@ export class TableComponent implements OnInit {
   constructor() { }
 
   title = 'Group-5 Project';
-  dataType: string = "";
-  sortMethod: string = "";
+  dataType: string = "Death";
+  sortMethod: string = "Highest";
   numberOfSelect: number = 1;
   dateOfData: Date = new Date("05/21/2020");
  
@@ -20,7 +20,7 @@ export class TableComponent implements OnInit {
   }
 
   SearchClick(): void {
-    console.log(this.dataType + ' ' + this.sortMethod + ' ' + this.numberOfSelect);
+    console.log(this.dataType + ' ' + this.sortMethod + ' ' + Number(this.numberOfSelect));
   }
 
 }
