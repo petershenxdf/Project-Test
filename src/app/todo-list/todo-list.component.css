@@ -18,7 +18,7 @@ a{
 }
 
 .topbar{
-    height: 50p;
+    height: 50px;
     background: #333;
     line-height: 50px;
 }
@@ -97,4 +97,9 @@ a{
 .clear ul li p{
     text-align: center;
     padding-top: 5px;
+}
+
+div.divClass1{
+    text-align: center;
+    background-color: #9500ff;
 }

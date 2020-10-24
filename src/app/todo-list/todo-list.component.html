@@ -1,52 +1,34 @@
 
 <!--Division heading-->
 <div class="container-fluid"> 
-    <div class="row bg-info justify-content-center 
-            align-items-center" style="height:80px"> 
-        <div class="col-3"></div> 
-        <div class="col-6 text-light h2"> 
+    <div>
+        <div>
             To do list 
         </div> 
     </div> 
   
     <!--Division for taking input from user -->
-    <div class="row mt-1" style="height:80px;"> 
-        <div class="col-3 d-none col-md-3 d-md-block"></div> 
-        <div class="col-12 col-md-6 bg-info d-flex  
-                    justify-content-center align-items-center  
-                    text-light h3"> 
-  
-            <input [(ngModel)]="newTask" type="text" 
-                    value="" class="col-7 form-control"
-                        style="width:300px;"> 
-  
-            <div class="col-1"></div> 
-  
-            <button (click)="addToList()"  
-                class="btn btn-light text-info"> 
-                ADD TASK 
-            </button> 
-        </div> 
-  
-        <div class="col-3 d-none col-md-3 d-md-block"></div> 
+    <div>
+        <div class="divClass1">
+            <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+                <input [(ngModel)]="model.location" type="text" name="location"
+                       value="" class="col-7 form-control"><br>
+                <input [(ngModel)]="model.time" type="text" name="time"
+                       value="" class="col-7 form-control"><br>
+                <input [(ngModel)]="model.message" type="text" name="message"
+                        value="" class="col-7 form-control">
+                <button class="btn btn-primary btn-block">Submit</button>
+            </form>
+        </div>
     </div> 
   
     <!--Tasks added repeated divisions-->
-    <div *ngFor="let x of items; let index = index;" 
-            class="row mt-1" style="height:100px;"> 
-  
-        <div class="col-3 d-none col-md-3 d-md-block"></div> 
-  
-        <div class="col-12 col-md-6 bg-info d-flex 
-                    justify-content-center align-items-center 
-                    text-light h3"> 
-  
-            <div class="col-9 text-light h3">{{x}}</div> 
-  
+    <div *ngFor="let x of items; let index = index;">
+        <div>
+            <div>location: {{x.location}} time: {{x.time}}<br> message: {{x.message}}</div>
             <input (click)="deleteTask(index)" type="button"
-                value="Delete" class="col-2 btn btn-danger"> 
-        </div> 
-          
+                value="Delete">
+        </div>
         <div class="col-3 d-none col-md-3 d-md-block"></div> 
     </div> 
 </div> 
