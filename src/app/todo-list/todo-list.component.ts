@@ -5,7 +5,6 @@ export class Message {
     public time: string;
     public message: string;
 }
-
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
@@ -30,16 +29,7 @@ export class TodoListComponent implements OnInit {
   }
 
 
-       /* When input is empty, it will
-          not create a new division */
-       public addToList() {
-           if (this.newTask === '') {
-           }
-           else {
-               this.items.push(this.newTask);
-               this.newTask = '';
-           }
-       }
+    
 
        /* This function takes to input the
           task, that has to be deleted*/
