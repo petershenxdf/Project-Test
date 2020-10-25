@@ -1,6 +1,10 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
+<<<<<<< HEAD
   "extends": "../tsconfig.json",
+=======
+  "extends": "../tsconfig.base.json",
+>>>>>>> origin/Zeheng
   "compilerOptions": {
     "outDir": "../out-tsc/e2e",
     "module": "commonjs",

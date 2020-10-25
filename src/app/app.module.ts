@@ -9,7 +9,7 @@ import { BarComponent } from './bar/bar.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { TableComponent } from './table/table.component';
-
+import {QuizComponent} from './quiz/quiz.component';
 const routes: Routes = [
   {path: 'LineC', component: ChartComponent},
   {path: 'BarC', component: BarComponent},
@@ -24,7 +24,8 @@ const routes: Routes = [
     ChartComponent,
     BarComponent,
     TableComponent,
-    LoginComponent
+    LoginComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule,
