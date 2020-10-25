@@ -25,8 +25,8 @@ export class Quiz {
 }
 
 @Component({
-  selector: 'app-student',
-  templateUrl: './quiz.component_r6.html',
+  selector: 'app-quiz',
+  templateUrl: './quiz.component.html',
   styleUrls: ['./quiz.component.css']
 })
 export class QuizComponent implements OnInit {
