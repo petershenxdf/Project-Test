@@ -1,9 +1,11 @@
+import { string } from '@amcharts/amcharts4/core';
 import { Component, OnInit } from '@angular/core';
 
 export class Message {
     public location: string;
     public time: string;
-    public message: string;
+    public message: string[] = [];
+    public new_mssg:string;
 }
 @Component({
   selector: 'app-todo-list',
@@ -15,6 +17,7 @@ export class TodoListComponent implements OnInit {
   constructor() { }
   public location: string;
   public time: string;
+  public new_mssg:string;
   model = new Message();
     /* An empty array that is responsible
        to add a division */
@@ -42,12 +45,25 @@ export class TodoListComponent implements OnInit {
            if (this.newTask === '') {
            }
            else {
-               this.items.push(this.model);
+               
                this.location = this.model.location;
                this.time = this.model.time;
-               this.model = new Message();
-               this.model.location = this.location;
-               this.model.time = this.time;
+               this.new_mssg=this.model.new_mssg;
+               let new_model = new Message();
+               new_model.location = this.location;
+               new_model.time = this.time;
+               new_model.new_mssg=this.new_mssg;
+               let line:string = '';
+               for (let i = 0; i < new_model.new_mssg.length; i++){
+                   const character = new_model.new_mssg.charAt(i);
+                   line = line.concat(character);
+                   if( (i+1)%20==0){
+                    new_model.message.push(line);
+                    line='';
+                   }}
+                   new_model.message.push(line);
+                this.items.push(new_model);
+                console.log(new_model.message);
            }
        }
 }
