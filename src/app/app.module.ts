@@ -1,17 +1,24 @@
-import { BrowserModule }                from '@angular/platform-browser';
-import { ReactiveFormsModule }          from '@angular/forms';
-import { NgModule }                     from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
-import { AppComponent }                 from './app.component';
-import { DynamicFormComponent }         from './dynamic-form.component';
-import { DynamicFormQuestionComponent } from './dynamic-form-question.component';
+import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
+import { TodoListComponent } from './todo-list/todo-list.component';
+import { QuizComponent } from './quiz/quiz.component';
+import {MustMatchDirective} from './directives/match-value.directive';
 
 @NgModule({
-  imports: [ BrowserModule, ReactiveFormsModule ],
-  declarations: [ AppComponent, DynamicFormComponent, DynamicFormQuestionComponent ],
-  bootstrap: [ AppComponent ]
+  declarations: [
+    AppComponent,
+    TodoListComponent,
+    QuizComponent,
+    MustMatchDirective
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
-export class AppModule {
-  constructor() {
-  }
-}
+export class AppModule { }
