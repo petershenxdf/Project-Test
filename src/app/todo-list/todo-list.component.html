@@ -10,14 +10,26 @@
     <!--Division for taking input from user --> 
     <div>
         <div class="divClass1">
-            <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
-                <input [(ngModel)]="model.location" type="text" name="location"
-                       value="" class="col-7 form-control"><br>
+            <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)"  >
+                  <div class="form-group1">
+                    <label>Please enter the location:</label><br>
+
+
+                <input  [(ngModel)]="model.location" type="text" name="location"
+                       value="" class="center-block1"> <br>
+
+                  </div>
+                <div class ="for-group2">
+                    <label>Please enter the time:</label> <br>
                 <input [(ngModel)]="model.time" type="text" name="time"
-                       value="" class="col-7 form-control"><br>
+                       value="" class="center-block2"><br>
+                </div>
+                <div class="form-group3">
+                    <label>Please enter the mssage:</label> <br>
                 <input [(ngModel)]="model.new_mssg" type="text" name="new_mssg"
-                        value="" class="col-7 form-control">
+                        value="" class="center-block3" size="50"> <br> <br>
                 <button class="submit">Submit</button>
+                </div>
             </form>
         </div>
     </div> 

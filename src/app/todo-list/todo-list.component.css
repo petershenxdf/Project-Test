@@ -6,6 +6,21 @@ div.divClass1{
 }
 button.submit{
     width: 100px;
-   
-    color: darkcyan;
+    background-color: deepskyblue;
+
 }
+.center-block1{
+    text-align: center;
+}
+.center-block2{
+    text-align: center;
+}
+.center-block3{
+    text-align: center;
+    size: 50px;
+}
+.cabin {
+    background-color: green;
+}
+
+
