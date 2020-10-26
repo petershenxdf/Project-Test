@@ -25,15 +25,23 @@ export class LoginComponent implements OnInit {
   modelLogin = new Login();
   modelSignUp = new SignUp();
   public signed: boolean;
+  public isIn: boolean;
+  public userName: string;
   ngOnInit(): void {
     this.signed = true;
+    this.isIn = false;
   }
 
   onSubmit(form): void {
-    console.log(form.value);
+    this.userName = form.value.name;
+    this.isIn = true;
   }
   onGoToSignUp(): void {
     this.signed = !this.signed;
+  }
+  logOut(): void {
+    this.isIn = false;
+    this.signed = true;
   }
 
 }

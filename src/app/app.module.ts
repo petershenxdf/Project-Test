@@ -10,7 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { TableComponent } from './table/table.component';
 import { QuizComponent } from './quiz/quiz.component';
-
+import { MustMatchDirective } from './directives/match-value.directive';
 
 const routes: Routes = [
   {path: 'LineC', component: ChartComponent},
@@ -30,8 +30,8 @@ const routes: Routes = [
     TableComponent,
     LoginComponent,
     QuizComponent,
-    RecordComponent
-
+    RecordComponent,
+    MustMatchDirective
   ],
   imports: [
     BrowserModule,
