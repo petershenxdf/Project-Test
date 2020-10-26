@@ -14,9 +14,12 @@ button.submit{
 .center-block2{
   text-align: center;
 }
-.center-block3{
+.center-block4{
   text-align: center;
-  size: 50px;
+}
+.center-block3{
+
+  height:80px;
 }
 .cabin {
   background-color: green;

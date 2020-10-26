@@ -4,19 +4,21 @@ import { Component, OnInit } from '@angular/core';
 export class Message {
     public location: string;
     public time: string;
+    public name:string;
     public message: string[] = [];
     public new_mssg:string;
 }
 @Component({
-  selector: 'app-todo-list',
-  templateUrl: './todo-list.component.html',
-  styleUrls: ['./todo-list.component.css']
+  selector: 'app-record',
+  templateUrl: './record.component.html',
+  styleUrls: ['./record.component.css']
 })
-export class TodoListComponent implements OnInit {
+export class RecordComponent implements OnInit {
 
   constructor() { }
   public location: string;
   public time: string;
+  public name:string;
   public new_mssg:string;
   model = new Message();
     /* An empty array that is responsible
@@ -32,7 +34,7 @@ export class TodoListComponent implements OnInit {
   }
 
 
-    
+
 
        /* This function takes to input the
           task, that has to be deleted*/
@@ -45,7 +47,7 @@ export class TodoListComponent implements OnInit {
            if (this.newTask === '') {
            }
            else {
-               
+               this.name=this.model.name;
                this.location = this.model.location;
                this.time = this.model.time;
                this.new_mssg=this.model.new_mssg;
@@ -53,6 +55,7 @@ export class TodoListComponent implements OnInit {
                new_model.location = this.location;
                new_model.time = this.time;
                new_model.new_mssg=this.new_mssg;
+               new_model.name=this.name;
                let line:string = '';
                for (let i = 0; i < new_model.new_mssg.length; i++){
                    const character = new_model.new_mssg.charAt(i);

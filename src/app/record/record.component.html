@@ -10,10 +10,16 @@
   <div>
       <div class="divClass1">
           <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)"  >
+
+            <div class="form-group4">
+              <label>Please enter the Name:</label><br>
+          <input  [(ngModel)]="model.name" type="text" name="name"
+                 value="" class="center-block4"> <br>
+
+            </div>
+
                 <div class="form-group1">
                   <label>Please enter the location:</label><br>
-
-
               <input  [(ngModel)]="model.location" type="text" name="location"
                      value="" class="center-block1"> <br>
 
@@ -26,7 +32,7 @@
               <div class="form-group3">
                   <label>Please enter the mssage:</label> <br>
               <input [(ngModel)]="model.new_mssg" type="text" name="new_mssg"
-                      value="" class="center-block3" size="50"> <br> <br>
+                      value="" class="center-block3"  > <br> <br>
               <button class="submit">Submit</button>
               </div>
           </form>
@@ -36,7 +42,8 @@
   <!--Tasks added repeated divisions-->
   <div *ngFor="let x of items; let index = index;">
       <div>
-          <div>location: {{x.location}} time: {{x.time}}<br></div>
+
+          <div>Name: {{x.name}} <br> Location: {{x.location}}<br> Time: {{x.time}}<br></div>
           <div>Message:</div>
           <div *ngFor="let y of x.message;">
               <div>{{y}} <br> </div></div>
