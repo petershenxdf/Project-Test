@@ -9,7 +9,7 @@ import { BarComponent } from './bar/bar.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { TableComponent } from './table/table.component';
-import {QuizComponent} from './quiz/quiz.component';
+import { QuizComponent } from './quiz/quiz.component';
 
 
 const routes: Routes = [
@@ -18,6 +18,7 @@ const routes: Routes = [
   {path: 'Table', component: TableComponent},
   {path: 'Login', component: LoginComponent},
   {path: 'Quiz', component: QuizComponent},
+  {path: 'Record', component: RecordComponent},
   {path: '', redirectTo: 'Table', pathMatch: 'full'}
 ];
 
