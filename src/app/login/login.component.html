@@ -2,7 +2,7 @@
   Revision of class registration extended to transformation (|)
   #name *ngIf [ngClass]
 -->
-<div *ngIf="!signed">
+<div *ngIf="!signed&&!isIn">
     <form #myForm="ngForm" (ngSubmit)="myForm.form.valid && onSubmit(myForm)" [mustMatch]="['password', 'confirmPassword']"
     class="LoginNSignup">
         <div class="form-row">
@@ -53,14 +53,14 @@
             </div>
         </div>
         <div class="form-group">
-            <button class="submit" [routerLink]="['/Table']">SIGN UP</button>
+            <button class="submit">SIGN UP</button>
         </div>
     </form>
     <p>Already have an account?
         <button (click)="onGoToSignUp()" class="switchForm">Go To Login</button>
     </p>
 </div>
-<div *ngIf="signed">
+<div *ngIf="signed&&!isIn">
     <form #myForm="ngForm" (ngSubmit)="myForm.form.valid && onSubmit(myForm)" class="LoginNSignup">
         <div class="form-row">
             <div class="form-group col-md-4 mb-3">
@@ -84,10 +84,18 @@
             </div>
         </div>
         <div class="form-group">
-            <button class="submit" [routerLink]="['/Table']">LOGIN</button>
+            <button class="submit">LOGIN</button>
         </div>
     </form>
     <p>Don't have an account?
         <button (click)="onGoToSignUp()" class="switchForm">Go To Sign Up</button>
     </p>
+</div>
+
+<div *ngIf="isIn">
+  <h1>Welcome, {{userName}}!</h1>
+  <button class="submit" [routerLink]="['/Table']">go to first page</button>
+  <p>you are not {{userName}}?
+    <button class="switchForm" (click)="logOut()">LOGOUT</button>
+  </p>
 </div>
