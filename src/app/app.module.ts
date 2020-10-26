@@ -1,7 +1,7 @@
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
-
+import { TodoListComponent } from './todo-list/todo-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ChartComponent } from './chart/chart.component';
@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { TableComponent } from './table/table.component';
 import {QuizComponent} from './quiz/quiz.component';
+
 
 const routes: Routes = [
   {path: 'LineC', component: ChartComponent},
@@ -27,7 +28,8 @@ const routes: Routes = [
     BarComponent,
     TableComponent,
     LoginComponent,
-    QuizComponent
+    QuizComponent,
+    TodoListComponent
   ],
   imports: [
     BrowserModule,
