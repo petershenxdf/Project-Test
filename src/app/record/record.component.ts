@@ -60,11 +60,13 @@ export class RecordComponent implements OnInit {
                for (let i = 0; i < new_model.new_mssg.length; i++){
                    const character = new_model.new_mssg.charAt(i);
                    line = line.concat(character);
-                   if( (i+1)%20==0){
+                   if( (i+1)%40==0) {
                     new_model.message.push(line);
                     line='';
-                   }}
-                   new_model.message.push(line);
+                   }
+               }
+                new_model.message.push(line);
+                new_model.message.push('');
                 this.items.push(new_model);
                 console.log(new_model.message);
            }
