@@ -19,7 +19,7 @@ const routes: Routes = [
   {path: 'Login', component: LoginComponent},
   {path: 'Quiz', component: QuizComponent},
   {path: 'Record', component: RecordComponent},
-  {path: '', redirectTo: 'Table', pathMatch: 'full'}
+  {path: '', redirectTo: '/Table', pathMatch: 'full'}
 ];
 
 @NgModule({
