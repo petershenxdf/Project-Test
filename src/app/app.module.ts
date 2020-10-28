@@ -13,13 +13,13 @@ import { QuizComponent } from './quiz/quiz.component';
 import { MustMatchDirective } from './directives/match-value.directive';
 
 const routes: Routes = [
-  {path: 'LineC', component: ChartComponent},
-  {path: 'BarC', component: BarComponent},
-  {path: 'Table', component: TableComponent},
-  {path: 'Login', component: LoginComponent},
-  {path: 'Quiz', component: QuizComponent},
-  {path: 'Record', component: RecordComponent},
-  {path: '', redirectTo: '/Table', pathMatch: 'full'}
+  {path: 'lineC', component: ChartComponent},
+  {path: 'barC', component: BarComponent},
+  {path: 'table', component: TableComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'quiz', component: QuizComponent},
+  {path: 'record', component: RecordComponent},
+  {path: '', redirectTo: '/table', pathMatch: 'full'}
 ];
 
 @NgModule({
