@@ -2,11 +2,11 @@
   Revision of class registration extended to transformation (|)
   #name *ngIf [ngClass]
 -->
-<form #myForm="ngForm" (ngSubmit)="myForm.form.valid && onSubmit(myForm)">
+<form #myForm="ngForm" (ngSubmit)="myForm.form.valid && onSubmit(myForm)" style="width: 80%; height: 120%; margin-left: 10%; ">
   <div class="form-col">
     <div class="form-group">
       <label>{{Question_sub[0]}}</label>
-      <select class="form-control" name="Question1" [(ngModel)]="model.question1">
+      <select class="form-control" name="Question1" [(ngModel)]="model.question1" >
         <option *ngFor="let question1 of Question1" [value]="question1">
           {{question1}}
         </option>
@@ -171,7 +171,10 @@
     </div>
   </div>
   <div class="form-group">
-    <button class="btn btn-primary btn-block">Submit</button>
+    <button class="btn btn-primary btn-block" style="width: 50%; margin: auto;">Submit</button>
     <p style = "margin-left:40%; font-size:33px;">Your score is :{{model.scores}}</p>
+  <div style="height: 100px;"> </div>
+
   </div>
+
 </form>
