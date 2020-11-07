@@ -1,4 +1,3 @@
-import { element } from 'protractor';
 import { HttpClient } from '@angular/common/http';
 import { Component, Inject, NgZone, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
@@ -14,17 +13,18 @@ import am4themes_animated from '@amcharts/amcharts4/themes/animated';
   styleUrls: ['./chart.component.css']
 })
 
+
+
 export class ChartComponent {
   private chart: am4charts.XYChart;
-  private start_data: any;
+
   private items=[];
   status:string;
-
-
   private total_url='https://api.covidtracking.com/v1/us/daily.json';
   constructor(@Inject(PLATFORM_ID) private platformId, private zone: NgZone,private http:HttpClient) {
+      console.log(this.total_url);
       this.http.get<object[]>(this.total_url).toPromise().then(data=>{
-        this.start_data=data;
+
         data.forEach(element=>{
           let da=element["date"].toString();
           let date=da.slice(0,4)+'-'+da.slice(4,6)+'-'+da.slice(6,8)
@@ -36,7 +36,7 @@ export class ChartComponent {
 
         this.items.reverse();
         this.chart.data=this.items;
-
+        console.log(this.chart.data);
       })
   }
 
