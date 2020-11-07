@@ -9,9 +9,7 @@ import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 
 
-@Injectable({
-  providedIn: 'root'
-})
+
 @Component({
   selector: 'app-bar',
   templateUrl: './bar.component.html',
@@ -22,17 +20,17 @@ export class BarComponent {
   private states_url='https://gist.githubusercontent.com/mshafrir/2646763/raw/8b0dbb93521f5d6889502305335104218454c2bf/states_hash.json';
   private data_url='https://api.covidtracking.com/v1/states/current.json';
 
-  constructor(@Inject(PLATFORM_ID) private platformId, private zone: NgZone, private http:HttpClient) {
+  constructor(private zone: NgZone, private http:HttpClient) {
 
   }
 
   // Run the function only in the browser
   browserOnly(f: () => void) {
-    if (isPlatformBrowser(this.platformId)) {
+
       this.zone.runOutsideAngular(() => {
         f();
       });
-    }
+
   }
 
   ngAfterViewInit() {
