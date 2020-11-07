@@ -1,21 +1,25 @@
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
-import { TodoListComponent } from './todo-list/todo-list.component';
+import { RecordComponent } from './record/record.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ChartComponent } from './chart/chart.component';
 import { BarComponent } from './bar/bar.component';
-// import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { TableComponent } from './table/table.component';
-
-
+import { QuizComponent } from './quiz/quiz.component';
+import { MustMatchDirective } from './directives/match-value.directive';
+import {HttpClientModule} from '@angular/common/http';
 const routes: Routes = [
-  {path: 'LineC', component: ChartComponent},
-  {path: 'BarC', component: BarComponent},
-  {path: 'Table', component: TableComponent},
-  {path: '', redirectTo: 'Table', pathMatch: 'full'}
+  {path: 'lineC', component: ChartComponent},
+  {path: 'barC', component: BarComponent},
+  {path: 'table', component: TableComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'quiz', component: QuizComponent},
+  {path: 'record', component: RecordComponent},
+  {path: '', redirectTo: '/table', pathMatch: 'full'}
 ];
 
 @NgModule({
@@ -24,13 +28,16 @@ const routes: Routes = [
     ChartComponent,
     BarComponent,
     TableComponent,
-    TodoListComponent
-    // LoginComponent
+    LoginComponent,
+    QuizComponent,
+    RecordComponent,
+    MustMatchDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],

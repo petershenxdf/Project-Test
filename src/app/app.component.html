@@ -1,7 +1,7 @@
 <br>
 <div class="container-fluid">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <a class="navbar-brand" href="#" style="font-weight: bold">Covid-19 Info Board</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,26 +10,26 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li style="padding-left: 30%;" class="nav-item active">
-                    <a class="nav-link" [routerLink]="['/Table']">Table <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" [routerLink]="['/table']">Table <span class="sr-only">(current)</span></a>
                 </li>
                 <li style="padding-left: 30%;" class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Graph
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item" [routerLink]="['/LineC']">Line</a>
-                      <a class="dropdown-item" [routerLink]="['/BarC']">Bar</a>
+                      <a class="dropdown-item" [routerLink]="['/lineC']">Line</a>
+                      <a class="dropdown-item" [routerLink]="['/barC']">Bar</a>
                       <a class="dropdown-item" href="#">Something else here</a>
                     </div>
                 </li>
                 <li style="padding-left: 30%;" class="nav-item">
-                    <a class="nav-link" href="#">Test</a>
+                    <a class="nav-link" [routerLink]="['/quiz']">Test</a>
                 </li>
                 <li style="padding-left: 30%;" class="nav-item">
-                    <a class="nav-link" href="#">Sharing</a>
+                    <a class="nav-link" [routerLink]="['/record']">Sharing</a>
                 </li>
                 <li style="padding-left: 30%;" class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
+                    <a class="nav-link" [routerLink]="['/login']">Login</a>
                 </li>
             </ul>
         </div>
@@ -38,21 +38,16 @@
     <hr>
 
 
-    
+
     <hr>
     <router-outlet></router-outlet>
 
     <hr>
 
-
+    <footer class="page-footer font-small blue fixed-bottom">
+      <div Style="background-color:lightblue;" class="footer-copyright text-center py-3">
+        © 2020 Copyright: DePaul 2020 Autumn CSC-436 Group 5
+      </div>
+    </footer>
 
 </div>
-
-
-<app-todo-list></app-todo-list>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
