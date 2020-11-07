@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Inject, NgZone, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-
+import {Injectable} from '@angular/core';
 // amCharts imports
 import * as am4core from '@amcharts/amcharts4/core';
 import * as am4charts from '@amcharts/amcharts4/charts';
@@ -14,7 +14,9 @@ import am4themes_animated from '@amcharts/amcharts4/themes/animated';
 })
 
 
-
+@Injectable({
+  providedIn: 'root'
+})
 export class ChartComponent {
   private chart: am4charts.XYChart;
 

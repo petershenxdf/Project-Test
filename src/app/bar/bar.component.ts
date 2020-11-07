@@ -1,5 +1,5 @@
 
-import { Component, Inject, NgZone, PLATFORM_ID } from '@angular/core';
+import { Component, Inject, NgZone, PLATFORM_ID,Injectable} from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 
@@ -8,6 +8,10 @@ import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 
+
+@Injectable({
+  providedIn: 'root'
+})
 @Component({
   selector: 'app-bar',
   templateUrl: './bar.component.html',
