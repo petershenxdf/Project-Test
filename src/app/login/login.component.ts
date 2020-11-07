@@ -34,7 +34,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(form): void {
-    this.auth.login();
     this.userName = form.value.name;
     this.isIn = true;
   }
