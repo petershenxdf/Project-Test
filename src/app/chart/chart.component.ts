@@ -21,7 +21,7 @@ export class ChartComponent {
   private items=[];
   status:string;
   private total_url='https://api.covidtracking.com/v1/us/daily.json';
-  constructor(@Inject(PLATFORM_ID) private platformId, private zone: NgZone,private http:HttpClient) {
+  constructor(private http:HttpClient,@Inject(PLATFORM_ID) private platformId, private zone: NgZone) {
       console.log(this.total_url);
       this.http.get<object[]>(this.total_url).toPromise().then(data=>{
 
