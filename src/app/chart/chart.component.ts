@@ -23,7 +23,7 @@ export class ChartComponent {
   private items=[];
   status:string;
   private total_url='https://api.covidtracking.com/v1/us/daily.json';
-  constructor(private http:HttpClient,@Inject(PLATFORM_ID) private platformId, private zone: NgZone) {
+  constructor(private zone: NgZone,private http:HttpClient) {
       console.log(this.total_url);
       this.http.get<object[]>(this.total_url).toPromise().then(data=>{
 
@@ -39,6 +39,7 @@ export class ChartComponent {
         this.items.reverse();
         this.chart.data=this.items;
         console.log(this.chart.data);
+
       })
   }
 
@@ -66,14 +67,14 @@ export class ChartComponent {
   // Run the function only in the browser
   browserOnly(f: () => void) {
 
-    if (isPlatformBrowser(this.platformId)) {
+
       this.zone.runOutsideAngular(() => {
         f();
       });
-    }
+
   }
 
-  ngAfterViewInit() {
+ngAfterViewInit() {
     // Chart code goes in here
     this.browserOnly(() => {
       /* Chart code */
