@@ -16,6 +16,15 @@ button.switchForm {
     cursor: pointer;
     text-align:center;
 }
+button.googleLogIn {
+  border-radius: 3px;
+  border-color: #039be5;
+  border-width: 1px;
+  background-color: #ffffff;
+  color: #4d77ff;
+  cursor: pointer;
+  text-align:center;
+}
 button.submit {
     width: 20%;
     background-color: cornflowerblue;

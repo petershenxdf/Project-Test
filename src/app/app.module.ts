@@ -11,6 +11,9 @@ import { FormsModule } from '@angular/forms';
 import { TableComponent } from './table/table.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { MustMatchDirective } from './directives/match-value.directive';
+import {AngularFireModule} from '@angular/fire';
+import {environment} from '../environments/environment';
+import {AngularFireAuthModule} from '@angular/fire/auth';
 
 const routes: Routes = [
   {path: 'lineC', component: ChartComponent},
@@ -37,6 +40,8 @@ const routes: Routes = [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],

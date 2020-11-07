@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import { Router } from '@angular/router';
+import {AuthService} from '../auth.service';
 
 export class SignUp {
   public userName: string;
@@ -21,7 +21,8 @@ export class Login {
 
 export class LoginComponent implements OnInit {
 
-  constructor() {}
+  // tslint:disable-next-line:no-shadowed-variable
+  constructor(public auth: AuthService) {}
   modelLogin = new Login();
   modelSignUp = new SignUp();
   public signed: boolean;
@@ -29,17 +30,26 @@ export class LoginComponent implements OnInit {
   public userName: string;
   ngOnInit(): void {
     this.signed = true;
-    this.isIn = false;
+    this.isIn = this.auth.isLoggedIn();
   }
 
   onSubmit(form): void {
+    this.auth.login();
     this.userName = form.value.name;
     this.isIn = true;
   }
   onGoToSignUp(): void {
     this.signed = !this.signed;
   }
+
+  googleLogIn(): void {
+    this.auth.login();
+    this.userName = this.auth.getUserName();
+    this.isIn = true;
+  }
+
   logOut(): void {
+    this.auth.logout();
     this.isIn = false;
     this.signed = true;
   }

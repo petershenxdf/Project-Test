@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {string} from '@amcharts/amcharts4/core';
+import {AuthService} from './auth.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'Group-5 Project';
   // dataType: string = "";
   // sortMethod: string = "Highest";
@@ -16,8 +18,8 @@ export class AppComponent {
   // public show: boolean = true;
 
   // public buttonName:any = 'Show Date Table';
-
-  ngOnInit () {  }
+  constructor(public auth: AuthService) {}
+  ngOnInit(): void {}
 
 
 }
