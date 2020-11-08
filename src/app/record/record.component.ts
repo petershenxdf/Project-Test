@@ -3,10 +3,10 @@ import { Component, OnInit } from '@angular/core';
 
 export class Message {
     public location: string;
-    public time: string;
-    public name:string;
+    public time: Date;
+    public name: string;
     public message: string[] = [];
-    public new_mssg:string;
+    public newMessage: string;
 }
 @Component({
   selector: 'app-record',
@@ -17,9 +17,9 @@ export class RecordComponent implements OnInit {
 
   constructor() { }
   public location: string;
-  public time: string;
-  public name:string;
-  public new_mssg:string;
+  public time: Date;
+  public name: string;
+  public newMessage: string;
   model = new Message();
     /* An empty array that is responsible
        to add a division */
@@ -38,7 +38,7 @@ export class RecordComponent implements OnInit {
 
        /* This function takes to input the
           task, that has to be deleted*/
-       public deleteTask(index) {
+       public deleteTask(index): void {
            this.items.splice(index, 1);
        }
 
@@ -47,28 +47,28 @@ export class RecordComponent implements OnInit {
            if (this.newTask === '') {
            }
            else {
-               this.name=this.model.name;
+               this.name = this.model.name;
                this.location = this.model.location;
                this.time = this.model.time;
-               this.new_mssg=this.model.new_mssg;
-               let new_model = new Message();
-               new_model.location = this.location;
-               new_model.time = this.time;
-               new_model.new_mssg=this.new_mssg;
-               new_model.name=this.name;
-               let line:string = '';
-               for (let i = 0; i < new_model.new_mssg.length; i++){
-                   const character = new_model.new_mssg.charAt(i);
+               this.newMessage = this.model.newMessage;
+               const newModel = new Message();
+               newModel.location = this.location;
+               newModel.time = new Date(Date.parse(new Date().toString()));
+               newModel.newMessage = this.newMessage;
+               newModel.name = this.name;
+               let line = '';
+               for (let i = 0; i < newModel.newMessage.length; i++){
+                   const character = newModel.newMessage.charAt(i);
                    line = line.concat(character);
-                   if( (i+1)%40==0) {
-                    new_model.message.push(line);
-                    line='';
+                   if ((i + 1) % 40 === 0) {
+                     newModel.message.push(line);
+                     line = '';
                    }
                }
-                new_model.message.push(line);
-                new_model.message.push('');
-                this.items.push(new_model);
-                console.log(new_model.message);
+               newModel.message.push(line);
+               newModel.message.push('');
+               this.items.push(newModel);
+               console.log(newModel.message);
            }
        }
 }

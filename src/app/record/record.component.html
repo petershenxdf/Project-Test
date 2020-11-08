@@ -10,32 +10,37 @@
   <br>
   <div>
       <div class="divClass1">
-          <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)"  >
+          <form #myForm="ngForm" (ngSubmit)="myForm.form.valid && onSubmit(myForm)"  >
 
             <div class="form-group4">
               <label>Please enter the Name:</label><br>
-          <input  [(ngModel)]="model.name" type="text" name="name"
-                 value="" class="center-block4"> <br>
-
+              <input type="text" name="name" [(ngModel)]="model.name" #name="ngModel"
+                  class="center-block4" [ngClass]="{ 'is-invalid': myForm.submitted && name.invalid }" required> <br>
+              <div *ngIf="myForm.submitted && name.invalid" class="invalid-feedback">
+                <p *ngIf="name.errors.required">name is required</p>
+              </div>
             </div>
 
-                <div class="form-group1">
-                  <label>Please enter the location:</label><br>
-              <input  [(ngModel)]="model.location" type="text" name="location"
-                     value="" class="center-block1"> <br>
+            <div class="form-group1">
+              <label>Please enter the location:</label><br>
+              <input type="text" name="location" [(ngModel)]="model.location" #location="ngModel"
+                  class="center-block1" [ngClass]="{ 'is-invalid': myForm.submitted && location.invalid }" required> <br>
+              <div *ngIf="myForm.submitted && location.invalid" class="invalid-feedback">
+                <p *ngIf="location.errors.required">location is required</p>
+              </div>
+            </div>
 
-                </div>
-              <div class ="for-group2">
-                  <label>Please enter the time:</label> <br>
-              <input [(ngModel)]="model.time" type="text" name="time"
-                     value="" class="center-block2"><br>
+            <div class="form-group3">
+              <label>Please enter the mssage:</label> <br>
+              <input type="text" name="newMessage" [(ngModel)]="model.newMessage" #message="ngModel"
+              class="center-block3" [ngClass]="{ 'is-invalid': myForm.submitted && message.invalid }" required> <br>
+              <div *ngIf="myForm.submitted && message.invalid" class="invalid-feedback">
+                <p *ngIf="message.errors.required">message is required</p>
               </div>
-              <div class="form-group3">
-                  <label>Please enter the mssage:</label> <br>
-              <input [(ngModel)]="model.new_mssg" type="text" name="new_mssg"
-                      value="" class="center-block3"  > <br> <br>
-              <button class="submit">Submit</button>
-              </div>
+            </div>
+
+            <br>
+            <button class="submit">Submit</button>
           </form>
       </div>
   </div>
