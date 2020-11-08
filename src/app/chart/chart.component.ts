@@ -14,7 +14,9 @@ import am4themes_animated from '@amcharts/amcharts4/themes/animated';
 })
 
 
-
+@Injectable({
+  providedIn: 'root'
+})
 export class ChartComponent {
   private chart: am4charts.XYChart;
 
