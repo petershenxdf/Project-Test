@@ -11,15 +11,20 @@ import { FormsModule } from '@angular/forms';
 import { TableComponent } from './table/table.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { MustMatchDirective } from './directives/match-value.directive';
+import {AngularFireModule} from '@angular/fire';
+import {environment} from '../environments/environment';
+import {AngularFireAuthModule} from '@angular/fire/auth';
+import {AuthGuard} from './auth.guard';
 import {HttpClientModule} from '@angular/common/http';
+
 const routes: Routes = [
-  {path: 'lineC', component: ChartComponent},
-  {path: 'barC', component: BarComponent},
-  {path: 'table', component: TableComponent},
+  {path: 'lineC', component: ChartComponent, canActivate : [AuthGuard]},
+  {path: 'barC', component: BarComponent, canActivate : [AuthGuard]},
+  {path: 'table', component: TableComponent, canActivate : [AuthGuard]},
   {path: 'login', component: LoginComponent},
-  {path: 'quiz', component: QuizComponent},
-  {path: 'record', component: RecordComponent},
-  {path: '', redirectTo: '/table', pathMatch: 'full'}
+  {path: 'quiz', component: QuizComponent, canActivate : [AuthGuard]},
+  {path: 'record', component: RecordComponent, canActivate : [AuthGuard]},
+  {path: '', redirectTo: '/login', pathMatch: 'full', canActivate : [AuthGuard]}
 ];
 
 @NgModule({
@@ -37,6 +42,8 @@ const routes: Routes = [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
     HttpClientModule,
     RouterModule.forRoot(routes)
   ],
