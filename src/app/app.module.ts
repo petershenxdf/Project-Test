@@ -18,13 +18,13 @@ import {AuthGuard} from './auth.guard';
 import {HttpClientModule} from '@angular/common/http';
 
 const routes: Routes = [
-  {path: 'lineC', component: ChartComponent, canActivate : [AuthGuard]},
-  {path: 'barC', component: BarComponent, canActivate : [AuthGuard]},
-  {path: 'table', component: TableComponent, canActivate : [AuthGuard]},
+  {path: 'lineC', component: ChartComponent},
+  {path: 'barC', component: BarComponent},
+  {path: 'table', component: TableComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'quiz', component: QuizComponent, canActivate : [AuthGuard]},
-  {path: 'record', component: RecordComponent, canActivate : [AuthGuard]},
-  {path: '', redirectTo: '/login', pathMatch: 'full', canActivate : [AuthGuard]}
+  {path: 'quiz', component: QuizComponent},
+  {path: 'record', component: RecordComponent},
+  {path: '', redirectTo: '/login', pathMatch: 'full'}
 ];
 
 @NgModule({
