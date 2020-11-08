@@ -29,7 +29,7 @@ jobs:
 
       - run: npm install
       - run: npm install -g @angular/cli > /dev/null
-      - run: ng build --prod --output-path=dist --base-href="https://petershenxdf.github.io/Project-Demo/"
+      - run: ng build --prod --output-path=dist --base-href="https://petershenxdf.github.io/Project-Test/"
       - name: Publish generated content to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@3.5.9
         with:
