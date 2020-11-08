@@ -15,6 +15,7 @@ import am4themes_animated from "@amcharts/amcharts4/themes/animated";
   templateUrl: './bar.component.html',
   styleUrls: ['./bar.component.css']
 })
+
 export class BarComponent {
   private chart: am4charts.XYChart3D;
   private states_url='https://gist.githubusercontent.com/mshafrir/2646763/raw/8b0dbb93521f5d6889502305335104218454c2bf/states_hash.json';
