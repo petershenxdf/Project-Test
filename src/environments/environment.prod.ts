@@ -1,5 +1,6 @@
 export const environment = {
-  production: true,
+  production: false,
+  runningOS: 'Windows',
   firebaseConfig: {
     apiKey: 'AIzaSyAcQp80G_xyNgf7Ow3MTtvmz1aus0dcDlw',
     authDomain: 'fir-project1-1118b.firebaseapp.com',
