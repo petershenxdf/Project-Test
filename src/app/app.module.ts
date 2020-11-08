@@ -15,7 +15,7 @@ import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AuthGuard} from './auth.guard';
-//import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule} from '@angular/common/http';
 
 const routes: Routes = [
   {path: 'lineC', component: ChartComponent},
@@ -44,7 +44,7 @@ const routes: Routes = [
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
-    //HttpClientModule,
+    HttpClientModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],
