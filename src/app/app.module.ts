@@ -11,11 +11,15 @@ import { FormsModule } from '@angular/forms';
 import { TableComponent } from './table/table.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { MustMatchDirective } from './directives/match-value.directive';
+<<<<<<< HEAD
 import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AuthGuard} from './auth.guard';
 
+=======
+import {HttpClientModule} from '@angular/common/http';
+>>>>>>> master
 const routes: Routes = [
   {path: 'lineC', component: ChartComponent, canActivate : [AuthGuard]},
   {path: 'barC', component: BarComponent, canActivate : [AuthGuard]},
@@ -41,8 +45,12 @@ const routes: Routes = [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+<<<<<<< HEAD
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
+=======
+    HttpClientModule,
+>>>>>>> master
     RouterModule.forRoot(routes)
   ],
   providers: [],
